@@ -4,14 +4,14 @@ package main
 import (
     "fmt"
     "io"
-    "io/ioutill"
+    "io/ioutil"
     "net/http"
     "os"
     "time"
 )
 
 func main() {
-    start := time.now()
+    start := time.Now()
     ch := make(chan string)
     for _, url := range os.Args[1:] {
         go fetch(url, ch) // ゴルーチン開始
